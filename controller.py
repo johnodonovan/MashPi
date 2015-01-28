@@ -1,3 +1,6 @@
+#author:johnodonovan
+#date:jan15
+
 import plotly.plotly as py
 # (*) Useful Python/Plotly tools
 import plotly.tools as tls   
@@ -16,12 +19,13 @@ from plotly.graph_objs import *
 
 
 #sign in.  could be done with a credentials file too
+# get info for the next 5 lines from the settings tab in plot.ly
 
-username = 'johnodonovan'
-api_key = 'lqmjc5tvy1'
-stream_token1 = 'wtiitelka1'
-stream_token2 = 'odygjrmtdy';
-stream_token3 = 'dltfgsfgti';
+username = ''
+api_key = ''
+stream_token1 = ''
+stream_token2 = '';
+stream_token3 = '';
 
 py.sign_in(username, api_key)
 
