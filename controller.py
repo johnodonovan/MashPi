@@ -31,7 +31,6 @@ py.sign_in(username, api_key)
 
 
 
-
 #load system drivers
 os.system('modprobe w1-gpio')
 
@@ -132,7 +131,7 @@ stream3 = Stream(
 trace1 = Scatter(
     x=[],
     y=[],
-    mode='histogram',
+    mode='lines+markers',
     stream=dict(stream), 
     name='Hot Liquor Tank'        # (!) embed stream id, 1 per trace
 )
@@ -159,7 +158,7 @@ data = Data([trace1,trace2,trace3])
 
 layout = Layout(
     showlegend=True,
-    title='HLT, Mash and Target Temperatures :: ShamrockBrew',
+    title='HLT, MLT and Target Temperatures :: ShamrockBrew',
     xaxis=XAxis(
         title='Time (Pacific Standard Time)',
         titlefont=Font(
@@ -182,7 +181,7 @@ layout = Layout(
 fig = Figure(data=data, layout=layout)
 
 # (@) Send fig to Plotly, initialize streaming plot, open new tab
-unique_url = py.plot(fig, filename='BrewControl')
+unique_url = py.plot(fig, filename='BrewControl-1.0')
 
 print unique_url
 
@@ -206,11 +205,11 @@ k = 5    # some shape parameter
 N = 200  # number of points to be plotted
 
 # Delay start of stream by 5 sec (time to switch tabs)
-time.sleep(5) 
+time.sleep(0.5) 
 
 
 
-while i<N:
+while True:   #change back to N to specify run time limit
     i += 1   # add to counter
     
     # Compute offset for Pacific Time (PST)
@@ -232,7 +231,7 @@ while i<N:
     #(!) Write numbers to stream to append current data on plot,
     #     write lists to overwrite existing data on plot (more in 7.2).
             
-    time.sleep(0.08)  # (!) plot a point every 80 ms, for smoother plotting
+    time.sleep(1)  # (!) plot a point every 80 ms, for smoother plotting
     
 # (@) Close the stream when done plotting
 s.close() 
