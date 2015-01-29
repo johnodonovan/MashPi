@@ -26,6 +26,6 @@ You may want to read in the target temp from the command line.  I hardcoded to 1
 This setup might be useful for home brewers because you can record and visualize the effects of different hardware setups on the thermal efficiency of your setup.  For example, changing the length of a tube, insulating a mash tun, getting a different lid, etc etc.
 
 
-*** Feedback is welcomne, but please remember I only spent a few minutes on this.  It seems to work ok, but is likel to have issues that I have missed ***
+*** Feedback is welcomne, but please remember I didn't have much time for designing or implementing, and even less time for testing.  It seems to work ok for my purposes, but is likely to have issues that I have missed ***
 
 cheers!
